@@ -1,0 +1,123 @@
+:root {
+  --holby_red: #FF6565;
+  --black_text: #071629;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+a:hover {
+  opacity: 0.9;
+  color: var(--holby_red);
+}
+
+div[class^=panel] {
+  width: 100vw;
+  height: 100vh;
+}
+
+div.panel_1 {
+  background-image: url("images/headphones_hero_1.jpg");
+  color: white;
+}
+
+div.panel_3 {
+  background-image: url("images/headphones_hero_2.jpg");
+  color: white;
+}
+
+div.panel_2, div.panel_4 {
+  color: var(--black_text);
+}
+
+/* Panel_1 content =======================================*/
+
+        /*header*/
+
+header {
+  height: 60px;
+  padding-top: 15px;
+}
+
+div.icon {
+  background-image: url("images/logo_headphones.png");
+  position: relative;
+  height: 100%;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 15%;
+}
+
+nav {
+  position: relative;
+  width: 300px;
+  float: right;
+  right: 15%;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li a {
+  font-size: 1em;
+  text-decoration: none;
+  color: white;
+}
+
+        /* panel_one body*/
+
+.panel_1 div.container {
+  position: absolute;
+  height: 40%;
+  text-align: center;
+  bottom: 10%;
+  width: 90%;
+  margin: 0 5%;
+}
+
+.panel_1 div.content {
+  max-width: 600px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+div.title {
+
+}
+
+.panel_1 h1 {
+
+}
+
+.panel_1 button {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--holby_red);
+  margin: auto;
+  border: none;
+  box-shadow: 0 0 5px var(--black_text);
+  color: white;
+}
+
+.panel_1 > p {
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  overflow: hidden;
+}
+
