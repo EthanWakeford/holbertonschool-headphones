@@ -1,0 +1,382 @@
+@import url("/style.css");
+
+@font-face {
+  font-family: "holby_font";
+  src: url(fonts/SourceSansPro-Regular.otf);
+}
+
+:root {
+  --holby_red: #FF6565;
+  --black_text: #071629;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+a {
+  font-family: holby_font;
+}
+
+a:hover {
+  opacity: 0.9;
+  color: var(--holby_red);
+}
+
+button {
+  width: 150px;
+  height: 45px;
+  border-radius: 20px;
+  background-color: var(--holby_red);
+  border: none;
+  box-shadow: 0 0 5px var(--black_text);
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(10);
+}
+
+div[class^=panel]:not(.panel_4) {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+div.panel_1 {
+  background-image: url("images/headphones_hero_1.jpg");
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+div.panel_3 {
+  background-image: url("images/headphones_hero_2.jpg");
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+div.panel_2, div.panel_4 {
+  color: var(--black_text);
+}
+
+p {
+  margin: 0;
+  font-family: holby_font;
+}
+
+/* Panel_1 content =======================================*/
+
+        /*header*/
+        
+header {
+  height: 60px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+        
+div.icon {
+  background-image: url("images/logo_headphones.png");
+  position: relative;
+  height: 100%;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+ul.menu {
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+li a {
+  font-size: 1em;
+  text-decoration: none;
+  color: white;
+}
+
+div.menu_button {
+  display: block;
+}
+
+        /* hamburger icon*/
+
+.menu_button_container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu_toggle {
+  display: none;
+}
+
+.menu_button,
+.menu_button::before,
+.menu_button::after {
+  display: block;
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu_button {
+  width: 15px;
+}
+
+.menu_button::before {
+  width: 30px;
+  content: "";
+  margin-top: -8px;
+}
+
+.menu_button::after {
+  width: 30px;
+  content: "";
+  margin-top: 8px;
+}
+
+#menu_toggle:checked + .menu_button_container .menu_button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu_toggle:checked + .menu_button_container .menu_button {
+  background: transparent;
+}
+
+#menu_toggle:checked + .menu_button_container .menu_button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 480px) {
+  ul.menu {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 15%;
+    height: 20%;
+  }
+  #menu_toggle:checked ~ ul.menu {
+    display: flex;
+  }
+  .menu_button_container {
+    display: flex;
+    position: absolute;
+    top: 4%;
+    left: 3%;
+    height: 30px;
+  }
+}
+
+        /* panel_one body*/
+
+.panel_1 div.container {
+  position: absolute;
+  height: 45%;
+  text-align: center;
+  bottom: 10%;
+  width: 90%;
+  margin: 0 5%;
+}
+
+@media (max-width: 480px) {
+  .panel_1 div.container {
+    height: 50%;
+  }
+}
+
+.panel_1 div.content {
+  max-width: 600px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title h1, .title p {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.panel_1 button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.panel_1 > p {
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* panel_2 styles ==========================*/
+
+.panel_2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.panel_2 div.container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 50%;
+  padding: 10% 0;
+}
+
+.panel_2 .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+}
+
+.panel_2 .info [class^="holberton_school-icon-"] {
+  color: var(--holby_red);
+  font-size: 100px;
+}
+
+.panel_2 > p {
+  width: 50%;
+}
+
+.panel_2 h1 {
+  margin-top: 10%;
+  margin-bottom: 20px;
+}
+
+/* panel_3 content ==============================*/
+
+.panel_3 {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.panel_3 h1 {
+  margin-top: 10%;
+  margin-bottom: 0;
+}
+
+.panel_3 > p {
+  width: 50%;
+}
+
+.panel_3 .container {
+  margin-bottom: 10%;
+  margin-top: 10%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 50px;
+  width: 80%;
+  align-items: center;
+}
+
+.panel_3 .info {
+  background-image: url("images/pentagone.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.panel_3 .info p {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.panel_3 .info h1 {
+  font-size: 2.5em;
+}
+
+/* panel_4 styles=========================== */
+
+.panel_4 {
+  height: 70vh;
+}
+
+.panel_4 h1 {
+  width: 100%;
+  margin-top: 10%;
+  text-align: center;
+}
+
+.panel_4 form {
+  margin: auto;
+  height: 50%;
+  width: 50%;
+}
+
+.panel_4 input[type=text] {
+  width: 100%;
+  height: 10%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding-top: 10px;
+}
+
+.panel_4 label {
+  margin-top: 5%;
+  width: 100px;
+  display: inline-block;
+  
+}
+
+.panel_4 input[type=submit] {
+  width: 150px;
+  height: 45px;
+  border-radius: 20px;
+  background-color: var(--holby_red);
+  border: none;
+  box-shadow: 0 0 5px var(--black_text);
+  color: white;
+  display: block;
+  margin: 20% auto 0;
+}
+
+.panel_4 input[type=submit]:hover {
+  transform: scale(1.05);
+}
