@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "holby_font";
+  src: url(fonts/SourceSansPro-Regular.otf);
+}
+
 :root {
   --holby_red: #FF6565;
   --black_text: #071629;
@@ -9,6 +14,9 @@ html {
 
 body {
   margin: 0;
+}
+a {
+  font-family: holby_font;
 }
 
 a:hover {
@@ -35,33 +43,33 @@ div.panel_2, div.panel_4 {
   color: var(--black_text);
 }
 
+p {
+  margin: 0;
+  font-family: holby_font;
+}
+
 /* Panel_1 content =======================================*/
 
         /*header*/
-
-header {
-  height: 60px;
-  padding-top: 15px;
-}
-
-div.icon {
-  background-image: url("images/logo_headphones.png");
-  position: relative;
-  height: 100%;
-  width: 200px;
-  background-repeat: no-repeat;
+        
+        header {
+          height: 60px;
+          padding-top: 15px;
+          display: flex;
+          justify-content: space-around;
+        }
+        
+        div.icon {
+          background-image: url("images/logo_headphones.png");
+          position: relative;
+          height: 100%;
+          width: 200px;
+          background-repeat: no-repeat;
   background-size: contain;
-  left: 15%;
 }
 
-nav {
-  position: relative;
+ul.menu {
   width: 300px;
-  float: right;
-  right: 15%;
-}
-
-nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -70,10 +78,91 @@ nav ul {
   justify-content: space-between;
 }
 
-nav li a {
+li a {
   font-size: 1em;
   text-decoration: none;
   color: white;
+}
+
+div.menu_button {
+  display: block;
+}
+
+        /* hamburger icon*/
+
+.menu_button_container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu_toggle {
+  display: none;
+}
+
+.menu_button,
+.menu_button::before,
+.menu_button::after {
+  display: block;
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu_button {
+  width: 15px;
+}
+
+.menu_button::before {
+  width: 30px;
+  content: "";
+  margin-top: -8px;
+}
+
+.menu_button::after {
+  width: 30px;
+  content: "";
+  margin-top: 8px;
+}
+
+#menu_toggle:checked + .menu_button_container .menu_button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu_toggle:checked + .menu_button_container .menu_button {
+  background: transparent;
+}
+
+#menu_toggle:checked + .menu_button_container .menu_button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 480px) {
+  ul.menu {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 15%;
+    height: 20%;
+  }
+  #menu_toggle:checked ~ ul.menu {
+    display: flex;
+  }
+  .menu_button_container {
+    display: flex;
+    position: absolute;
+    top: 4%;
+    left: 3%;
+    height: 30px;
+  }
 }
 
         /* panel_one body*/
@@ -87,30 +176,38 @@ nav li a {
   margin: 0 5%;
 }
 
+@media (max-width: 480px) {
+  .panel_1 div.container {
+    height: 50%;
+  }
+}
+
 .panel_1 div.content {
   max-width: 600px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-div.title {
-
-}
-
-.panel_1 h1 {
-
+.title h1, .title p {
+  margin-bottom: 0;
+  margin-top: 5px;
 }
 
 .panel_1 button {
   width: 150px;
-  height: 40px;
+  height: 45px;
   border-radius: 20px;
   background-color: var(--holby_red);
-  margin: auto;
   border: none;
   box-shadow: 0 0 5px var(--black_text);
   color: white;
+  margin-top: 0;
+  margin-bottom: 10%;
 }
 
 .panel_1 > p {
