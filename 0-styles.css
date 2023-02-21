@@ -32,11 +32,19 @@ div[class^=panel] {
 div.panel_1 {
   background-image: url("images/headphones_hero_1.jpg");
   color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 div.panel_3 {
   background-image: url("images/headphones_hero_2.jpg");
   color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 div.panel_2, div.panel_4 {
